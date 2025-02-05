@@ -14,9 +14,9 @@
 ConformaSegment is an innovative framework built on conformal prediction, designed to generate robust and interpretable interval-based explanations for time-series forecasting—without relying on specific data distributions. 
 By identifying time intervals that significantly influence whether actual values fall within predicted confidence bounds, the framework sheds light on the model’s decision-making process. The presence of such impactful intervals indicates their essential role in shaping predictive confidence. 
 Thus, effective explainability demands not only pinpointing these key periods but also understanding how fluctuations in uncertainty alter forecasting outcomes. 
-ConformaSegment addresses these challenges by emphasizing the most crucial intervals, providing insights that enhance both reliability and interpretability. This foundation gives rise to critical research questions that drive further exploration into interval-based explanations in forecasting models.
+ConformaSegment addresses these challenges by emphasizing the most crucial intervals, providing insights that enhance both reliability and interpretability.
 
-For feature importance analysis, we implemented the function get_feature_importance(), which takes several key inputs: (i) a trained model, (ii) a sample, (iii) alpha, which sets the conformal prediction error rate, (iv) calibration datasets (X_cal and y_cal), and (v) a penalty parameter for the Pruned Exact Linear Time (PELT) change point detection algorithm.
+For feature importance analysis, we implemented the function get_feature_importance(), which takes several key inputs: a trained model, a sample x_test, alpha, which sets the conformal prediction error rate, calibration datasets, and a penalty parameter for the Pruned Exact Linear Time change point detection algorithm.
 
 ```python
 import ConformaSegment as cs
@@ -43,6 +43,11 @@ cs.get_feature_importance(model, instance, X_ref, y_ref, error_margin, pelt_pena
 The above code generates the following visual output. The algorithm evaluates segments based on their contribution to model uncertainty and, consequently, the model's decision. This allows for an interpretation of the time series, highlighting which segments are more influential in the model's decision-making process.
 
 ![Example Image 1](images/output_electric125.png)
+
+Another output sample can be found as below.
+
+![Example Image 1](images/output_updated2.png)
+
 
 The orange highlight represents the confidence interval, which is guaranteed to contain the correct value based on the user-specified coverage rate.
 
