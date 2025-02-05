@@ -57,3 +57,12 @@ The code is produced with the fund provided by the University of Bologna.
 
 <b>Author<b/> <br/>
 Fatima Rabia Yapicioglu <br/>
+
+Copyright 2025 UNIBO. All rights reserved.
+
+This software is proprietary and confidential. Unauthorized copying, modification, distribution, sublicensing, or use of this code, in whole or in part, without explicit written permission from the author is strictly prohibited.
+
+This software may not be reverse-engineered, decompiled, or disassembled. Violators will be subject to legal action.
+
+For licensing inquiries, contact fatima.yapicioglu2@unibo.it.
+
