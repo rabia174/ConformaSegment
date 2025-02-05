@@ -16,14 +16,39 @@ By identifying time intervals that significantly influence whether actual values
 Thus, effective explainability demands not only pinpointing these key periods but also understanding how fluctuations in uncertainty alter forecasting outcomes. 
 ConformaSegment addresses these challenges by emphasizing the most crucial intervals, providing insights that enhance both reliability and interpretability. This foundation gives rise to critical research questions that drive further exploration into interval-based explanations in forecasting models.
 
+For feature importance analysis, we implemented the function get_feature_importance(), which takes several key inputs: (i) a trained model, (ii) a sample, (iii) alpha, which sets the conformal prediction error rate, (iv) calibration datasets (X_cal and y_cal), and (v) a penalty parameter for the Pruned Exact Linear Time (PELT) change point detection algorithm.
+
 ```python
-sample = X_test[143]
-label_sample = y_test[143]
+import ConformaSegment as cs
+# Prepare independent and target variables  
+features, target = df.drop(columns=["target"]), df["target"]  
 
-error_rate = 0.10
-pelt_penalty_lambda = 2
+# Split data into training, testing, and calibration sets  
+X_train, X_eval, X_ref, y_train, y_eval, y_ref = data_split(features, target, split_rate=0.5, stratify=target)  
 
-cs.get_feature_importance(regressor, sample, label_sample, X_cal, y_cal, error_rate, pelt_penalty_lambda)
+# Define and train the model  
+model = make_lstm().fit(X_train, y_train)  
+
+# Set parameters for feature importance analysis  
+instance_idx = 165  # Index of the selected instance  
+instance = X_eval[instance_idx]  
+error_margin = 0.05  # Conformal prediction error rate  
+pelt_penalty = 4  # PELT change point detection penalty  
+
+# Compute feature importance for the selected instance  
+cs.get_feature_importance(model, instance, X_ref, y_ref, error_margin, pelt_penalty)  
+
 ```
 
+The above code generates the following visual output. The algorithm evaluates segments based on their contribution to model uncertainty and, consequently, the model's decision. This allows for an interpretation of the time series, highlighting which segments are more influential in the model's decision-making process.
 
+![Example Image 1](images/output_electric125.png)
+
+The orange highlight represents the confidence interval, which is guaranteed to contain the correct value based on the user-specified coverage rate.
+
+### Contributing
+
+The code is produced with the fund provided by the University of Bologna.
+
+<b>Author<b/> <br/>
+Fatima Rabia Yapicioglu <br/>
