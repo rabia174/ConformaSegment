@@ -9,6 +9,17 @@
 ![Static Badge](https://img.shields.io/badge/version-v1.0-green?style=flat&logo=github&logoColor=white&color=5533FF)
 ![Static Badge](https://img.shields.io/badge/documentation-paper-blue?style=flat&logo=github&logoColor=white&color=660055)
 
+
+<p align="center">
+  <strong>Click here to listen to the <em>ConformaSegment PODCAST</em> produced by AI.</strong>
+</p>
+<p align="center">
+  <a href="https://notebooklm.google.com/notebook/adfb56b4-f171-4c69-b03e-0cf9074fcbae/audio">
+    <img src="images/podcast.png" alt="ConformaSegment Podcast" width="150"/>
+  </a>
+</p>
+
+
 ### Introduction
 
 ConformaSegment is an innovative framework built on conformal prediction, designed to generate robust and interpretable interval-based explanations for time-series forecasting—without relying on specific data distributions. 
