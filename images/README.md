@@ -15,7 +15,7 @@
 </p>
 <p align="center">
   <a href="https://notebooklm.google.com/notebook/adfb56b4-f171-4c69-b03e-0cf9074fcbae/audio">
-    <img src="images/podcast.png" alt="ConformaSegment Podcast" width="150"/>
+    <img src="podcast.png" alt="ConformaSegment Podcast" width="150"/>
   </a>
 </p>
 
