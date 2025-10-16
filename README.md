@@ -77,3 +77,4 @@ This software may not be reverse-engineered, decompiled, or disassembled. Violat
 
 For licensing inquiries, contact fatima.yapicioglu2@unibo.it.
 
+This software can be used for academic and research purposes, if you use the package please cite the correct paper indicated in the website url of this repository.
